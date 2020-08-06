@@ -3,7 +3,13 @@ name: default
 
 steps:
 - name: test
-  image: node
+  image: node:9.3.0-slim
   commands:
   - npm install
   - npm test
+- name: docker  
+  image: plugins/docker
+  settings:
+    dry_run: true
+    repo: kkapelon/nest-sample
+    tags: latest

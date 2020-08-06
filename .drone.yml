@@ -8,7 +8,7 @@ steps:
   - uname -a 
   - pwd
   - uptime
-  - free -m
+  - free -mh
   - cat /proc/cpuinfo
 - name: test
   image: node:9.3.0-slim
@@ -21,3 +21,10 @@ steps:
     dry_run: true
     repo: kkapelon/nest-sample
     tags: latest
+- name: docker-multi  
+  image: plugins/docker
+  settings:
+    dry_run: true
+    repo: kkapelon/nest-sample
+    tags: multi
+    dockerfile: Dockerfile.multi

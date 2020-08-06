@@ -5,6 +5,7 @@ steps:
 - name: info
   image: alpine:3.9
   commands:
+  - hostname
   - uname -a 
   - pwd
   - uptime
@@ -13,6 +14,7 @@ steps:
 - name: test
   image: node:9.3.0-slim
   commands:
+  - hostname
   - npm install
   - npm test
 - name: docker  

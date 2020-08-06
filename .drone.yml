@@ -2,6 +2,14 @@ kind: pipeline
 name: default
 
 steps:
+- name: info
+  image: alpine:3.9
+  commands:
+  - uname -a 
+  - pwd
+  - uptime
+  - free -m
+  - cat /proc/cpuinfo
 - name: test
   image: node:9.3.0-slim
   commands:
